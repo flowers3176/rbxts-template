@@ -13,15 +13,32 @@
 	"plugins": [
 		"@typescript-eslint",
 		"roblox-ts",
-		"prettier"
+		"prettier",
+		"simple-import-sort",
+		"unused-imports"
 	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/stylistic",
 		"plugin:roblox-ts/recommended",
 		"plugin:prettier/recommended"
 	],
 	"rules": {
-		"prettier/prettier": "warn"
+		"@typescript-eslint/consistent-type-imports": "warn",
+		"prettier/prettier": "warn",
+		"simple-import-sort/imports": "warn",
+		"simple-import-sort/exports": "warn",
+		"no-void": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{
+				"vars": "all",
+				"varsIgnorePattern": "^_|^React$",
+				"args": "after-used",
+				"argsIgnorePattern": "^_"
+			}
+		]
 	}
 }

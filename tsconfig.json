@@ -4,23 +4,33 @@
 		"allowSyntheticDefaultImports": true,
 		"downlevelIteration": true,
 		"jsx": "react",
-		"jsxFactory": "Roact.createElement",
-		"jsxFragmentFactory": "Roact.createFragment",
+		"jsxFactory": "React.createElement",
+		"jsxFragmentFactory": "React.createFragment",
 		"module": "commonjs",
 		"moduleResolution": "Node",
 		"noLib": true,
 		"resolveJsonModule": true,
 		"experimentalDecorators": true,
+		"plugins": [
+			{ "transform": "rbxts-transformer-flamework" }
+		],
 		"forceConsistentCasingInFileNames": true,
 		"moduleDetection": "force",
 		"strict": true,
 		"target": "ESNext",
-		"typeRoots": ["node_modules/@rbxts"],
+		"typeRoots": ["node_modules/@rbxts", "node_modules/@flamework"],
 
 		// configurable
 		"rootDir": "src",
 		"outDir": "out",
 		"baseUrl": "src",
+		"paths": {
+			"types/*": ["types/*"],
+			"@services/*": ["client/services/*"],
+			"@controllers/*": ["client/controllers/*"],
+			"@app/*": ["client/app/*"],
+			"@hooks/*": ["client/app/hooks/*"]
+		},
 		"incremental": true,
 		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo"
 	}
